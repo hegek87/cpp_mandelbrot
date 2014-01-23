@@ -15,7 +15,7 @@ int main(int argc, char **argv){
 	
 	mb.generateColorSet(WIDTH, HEIGHT);
 	
-	for(int i = 0; i < WIDTH*HEIGHT; ++i){
+	for(int i = 0; i < (WIDTH*HEIGHT); ++i){
 		Color rgb = mb.getColorSet()[i];
 		writeFile.put(rgb.getR());
 		writeFile.put(rgb.getG());
