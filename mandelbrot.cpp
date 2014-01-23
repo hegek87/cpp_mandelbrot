@@ -15,21 +15,21 @@ Mandelbrot::Mandelbrot(int tolerance){
 Color Mandelbrot::iteratePoly(Complex point){
 	Complex polyDat[3] = {point,Complex(0,0),Complex(1,0)};
 	ComplexPoly mbPoly(polyDat, 2);
-	Complex iter = mbPoly.evaluate(ONE);
+	Complex iter = ZERO;
 	int count = 0;
 	while(iter.modulus() <= 2 && count < this->tolerance){
 		iter = mbPoly.evaluate(iter);
 		++count;
 	}
-	if(count >= this->tolerance){ return Color(0x000000); }
-	return Color(count + 0x9F);
+	if(count >= this->tolerance){ return Color(0xFF0000); }
+	return Color(count+0x99);
 }
 
 void Mandelbrot::generateColorSet(int width, int height){
 	for(int i = 0; i < height; ++i){
 		for(int j = 0; j < width; ++j){
-			//std::cout << i+j << std::endl;
-			this->colorSet.push_back(this->iteratePoly(Complex(i, j)));
+			Complex pixel(i,j);
+			this->colorSet.push_back(this->iteratePoly(pixel));
 		}
 	}
 }
