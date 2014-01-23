@@ -28,13 +28,13 @@ Color Mandelbrot::iteratePoly(Complex point){
 	}
 	else{ 
 		++outSet;
-		return Color(count+0x00FF00);
+		return Color(count);
 	}
 }
 
 void Mandelbrot::generateColorSet(int width, int height){
-	for(int i = 0; i < height; ++i){
-		for(int j = 0; j < width; ++j){
+	for(int i = -height/2; i < height/2; ++i){
+		for(int j = -width/2; j < width/2; ++j){
 			double xPixel = ((double)(4*i)/width);
 			double yPixel = ((double)(4*j)/height);
 			//std::cout << "X: " << xPixel;
