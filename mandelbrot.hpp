@@ -6,6 +6,8 @@
 #include "../color/color.h"
 #include <vector>
 
+#define TOLERANCE 1000
+
 const Complex unity(1,0);
 
 class Mandelbrot{
@@ -15,9 +17,8 @@ class Mandelbrot{
 	public:
 		Mandelbrot(int);
 		
-		std::vector<Color> getColorSet();
-		
 		Color iteratePoly(Complex);
 		void generateColorSet(int, int);
+		const std::vector<Color>& getColorSet();
 };
 #endif

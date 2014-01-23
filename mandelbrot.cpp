@@ -5,10 +5,7 @@
 Mandelbrot::Mandelbrot(int tolerance){
 	this->tolerance = tolerance;
 }
-		
-std::vector<Color> Mandelbrot::getColorSet(){
-	return this->colorSet;
-}
+
 /*
 *  We will return a color based on the value of count after
 *  the loop terminates. If count >= tolerance, return BLACK, 
@@ -24,7 +21,6 @@ Color Mandelbrot::iteratePoly(Complex point){
 		iter = mbPoly.evaluate(iter);
 		++count;
 	}
-	std::cout << count << std::endl;
 	if(count >= this->tolerance){ return Color(0x000000); }
 	return Color(count + 0x9F);
 }
@@ -36,3 +32,5 @@ void Mandelbrot::generateColorSet(int width, int height){
 		}
 	}
 }
+
+const std::vector<Color>& Mandelbrot::getColorSet(){ return colorSet; }
