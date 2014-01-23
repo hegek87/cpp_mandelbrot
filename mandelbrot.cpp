@@ -9,8 +9,8 @@ Mandelbrot::Mandelbrot(int tolerance){
 /*
 *  We will return a color based on the value of count after
 *  the loop terminates. If count >= tolerance, return BLACK, 
-*  otherwise we will return Color(count + 0x9F) [this return
-*  value may change in the future]
+*  otherwise we will return Color(count + 0x9F) 
+*  	[this return value may change in the future]
 */
 Color Mandelbrot::iteratePoly(Complex point){
 	Complex polyDat[3] = {point,Complex(0,0),Complex(1,0)};
@@ -27,7 +27,8 @@ Color Mandelbrot::iteratePoly(Complex point){
 
 void Mandelbrot::generateColorSet(int width, int height){
 	for(int i = 0; i < height; ++i){
-		for(int j = 0; i < width; ++j){
+		for(int j = 0; j < width; ++j){
+			//std::cout << i+j << std::endl;
 			this->colorSet.push_back(this->iteratePoly(Complex(i, j)));
 		}
 	}
