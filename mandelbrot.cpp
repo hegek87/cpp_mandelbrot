@@ -28,7 +28,7 @@ Color Mandelbrot::iteratePoly(Complex point){
 	}
 	else{ 
 		++outSet;
-		return Color(count);
+		return Color(count+0x00B020);
 	}
 }
 
