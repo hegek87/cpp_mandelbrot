@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include "mandelbrot.hpp"
 
 
@@ -18,7 +19,7 @@ Color Mandelbrot::iteratePoly(Complex point){
 	ComplexPoly mb(polyDat, 2);
 	Complex iter = mb.evaluate(ZERO);
 	int count = 0;
-	while(iter.modulus() <= 2 && count < this->tolerance){
+	while(iter.modSquared() <= 4 && count < this->tolerance){
 		iter = mb.evaluate(iter);
 		++count;
 	}
@@ -28,8 +29,8 @@ Color Mandelbrot::iteratePoly(Complex point){
 	}
 	else{ 
 		++outSet;
-		//std::cout << count << std::endl;
-		return Color(15*count);
+		int fadeColor = 1 + count - log(log(iter.modulus()))/log(2);
+		return Color((fadeColor+10) << 9);
 	}
 }
 

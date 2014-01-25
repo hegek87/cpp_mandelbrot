@@ -11,7 +11,7 @@ int main(int argc, char **argv){
 	std::ofstream writeFile;
 	setupBMP(writeFile, fileName, WIDTH, HEIGHT);
 	Mandelbrot mb(TOLERANCE);
-	mb.iteratePoly(Complex(.245, -.56));
+	//mb.iteratePoly(Complex(.245, -.56));
 	
 	mb.generateColorSet(WIDTH, HEIGHT);
 	
