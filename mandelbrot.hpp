@@ -6,7 +6,7 @@
 #include "../color/color.h"
 #include <vector>
 
-#define TOLERANCE 1000
+#define TOLERANCE 150
 
 const Complex unity(1,0);
 

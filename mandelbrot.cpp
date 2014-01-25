@@ -28,7 +28,8 @@ Color Mandelbrot::iteratePoly(Complex point){
 	}
 	else{ 
 		++outSet;
-		return Color(count+0x00B020);
+		//std::cout << count << std::endl;
+		return Color(15*count);
 	}
 }
 
