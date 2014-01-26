@@ -12,13 +12,13 @@ const Complex unity(1,0);
 
 class Mandelbrot{
 	private:
-		std::vector<Color> colorSet;
+		Bitmap bmp;
 		int tolerance;
 	public:
-		Mandelbrot(int);
+		Mandelbrot(int, int, int);
 		
 		Color iteratePoly(Complex);
-		void generateColorSet(int, int);
-		const std::vector<Color>& getColorSet();
+		void generateImage();
+		Bitmap& getBitmap();
 };
 #endif
