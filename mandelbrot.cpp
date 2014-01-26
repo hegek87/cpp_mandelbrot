@@ -4,9 +4,7 @@
 
 
 Mandelbrot::Mandelbrot(int tolerance, int width, int height) 
-: bmp(width, height){
-	this->tolerance = tolerance;
-}
+: bmp(width, height), tolerance(tolerance){}
 
 static int inSet = 0;
 static int outSet = 0;
