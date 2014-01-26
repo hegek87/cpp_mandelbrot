@@ -14,7 +14,7 @@ static int outSet = 0;
 *  We will return a color based on the value of count after
 *  the loop terminates. If count >= tolerance, return BLACK, 
 *  otherwise we will return a color based on count. We use 
-*  log properties to make the color change fade.
+*  log properties to make the color change fade smoothly.
 */
 Color Mandelbrot::iteratePoly(Complex point){
 	Complex polyDat[3] = {point,Complex(0,0),Complex(1,0)};
