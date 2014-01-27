@@ -3,3 +3,4 @@ Calculates and draws a Mandelbrot set. The code isn't optimized and takes some t
 An optional file name can be specified, if one is not supplied, the bitmap is named 'Mandelbrot.bmp'
 
 ![Alt text](Mandelbrot.bmp "1 megapixel")
+
